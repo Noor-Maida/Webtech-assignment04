@@ -81,10 +81,9 @@ function nextSlide() {
 }
 
 // save slides
-function saveSlides() {
-    localStorage.setItem("mySlides", markdownInput.value);
-    alert("Slides saved!");
-}
+markdownInput.addEventListener("input", function () {
+    createSlides();
+});
 
 // open presentation
 function startPresentation() {
