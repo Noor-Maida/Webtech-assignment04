@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Markdown Slides</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h2>Markdown Slides</h2>
+        <button onclick="saveSlides()">Save Slides</button>
+        <button onclick="toggleFullscreen()">Full Screen</button>
+    </header>
+
+    <main id="editorPage">
+        <section class="editor">
+            <h3>Write Markdown</h3>
+            <textarea id="markdownInput"># Welcome to My Presentation
+
+My first slide.
+
+---
+
+# Second Slide
+
+My second slide.
+
+---
+
+# Thank You</textarea>
+        </section>
+
+        <section class="preview">
+            <h3>Slide Preview</h3>
+
+            <div id="slide" class="slide"></div>
+
+            <div class="controls">
+                <button id="prevBtn" onclick="previousSlide()">Previous</button>
+                <span id="slideCount">1 / 1</span>
+                <button id="nextBtn" onclick="nextSlide()">Next</button>
+                <button onclick="togglePresentation()">Present</button>
+                <button onclick="toggleFullscreen()">Full Screen</button>
+            </div>
+        </section>
+    </main>
+
+    <section id="presentationPage">
+        <div id="presentationSlide" class="slide"></div>
+
+        <div class="controls">
+            <button id="presentPrevBtn" onclick="previousSlide()">Previous</button>
+            <span id="presentCount">1 / 1</span>
+            <button id="presentNextBtn" onclick="nextSlide()">Next</button>
+            <button onclick="togglePresentation()">Exit Presentation</button>
+            <button id="presentFullBtn" onclick="toggleFullscreen()">Full Screen</button>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
