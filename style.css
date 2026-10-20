@@ -1,13 +1,27 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
     background-color: #fce4f3;
     color: #4a148c;
+}
+
+/* pink bar at the top: title on the left, buttons on the right */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f48fb1;
+    padding: 10px 20px;
+}
+
+.header h2 {
+    margin: 0;
 }
 
 .container {
     display: flex;
     gap: 20px;
+    padding: 20px;
 }
 
 .box {
@@ -18,20 +32,27 @@ textarea {
     width: 100%;
     height: 350px;
     font-size: 16px;
+    box-sizing: border-box;
     border: 2px solid #8e24aa;
     background-color: #fff0f8;
 }
 
 .slide {
     border: 2px solid #8e24aa;
+    background-color: white;
     height: 350px;
     padding: 15px;
     overflow: auto;
-    background-color: white;
+    box-sizing: border-box;
 }
 
 .controls {
     margin-top: 10px;
+    text-align: right;
+}
+
+#slideCount {
+    text-align: center;
 }
 
 button {
@@ -51,6 +72,7 @@ button:disabled {
 #presentationPage {
     display: none;
     text-align: center;
+    padding: 20px;
 }
 
 #presentationSlide {

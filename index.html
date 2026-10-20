@@ -6,59 +6,61 @@
 </head>
 <body>
 
-    <header>
-        <h2>Markdown Slides</h2>
-        <button onclick="saveSlides()">Save Slides</button>
-        <button onclick="toggleFullscreen()">Full Screen</button>
-    </header>
+    <div id="editorPage">
 
-    <main id="editorPage">
-        <section class="editor">
-            <h3>Write Markdown</h3>
-            <textarea id="markdownInput"># Welcome to My Presentation
-
-My first slide.
-
----
-
-# Second Slide
-
-My second slide.
-
----
-
-# Thank You</textarea>
-        </section>
-
-        <section class="preview">
-            <h3>Slide Preview</h3>
-
-            <div id="slide" class="slide"></div>
-
-            <div class="controls">
-                <button id="prevBtn" onclick="previousSlide()">Previous</button>
-                <span id="slideCount">1 / 1</span>
-                <button id="nextBtn" onclick="nextSlide()">Next</button>
-                <button onclick="togglePresentation()">Present</button>
-                <button onclick="toggleFullscreen()">Full Screen</button>
+        <div class="header">
+            <h2>Markdown Slides</h2>
+            <div>
+                <button onclick="saveSlides()">Save Slides</button>
+                <button onclick="startPresentation()">Present</button>
             </div>
-        </section>
-    </main>
-
-    <section id="presentationPage">
-        <div id="presentationSlide" class="slide"></div>
-
-        <div class="controls">
-            <button id="presentPrevBtn" onclick="previousSlide()">Previous</button>
-            <span id="presentCount">1 / 1</span>
-            <button id="presentNextBtn" onclick="nextSlide()">Next</button>
-            <button onclick="togglePresentation()">Exit Presentation</button>
-            <button id="presentFullBtn" onclick="toggleFullscreen()">Full Screen</button>
         </div>
-    </section>
+
+        <div class="container">
+            <div class="box">
+                <h3>Write Markdown</h3>
+                <textarea id="markdownInput"># This is Slide 01
+## This is Heading 02 in slide 01
+This is my content on slide 01
+
+---
+
+# This is Slide 02
+## This is Heading 02 in slide 02
+This is my content on slide 02
+
+---
+
+# This is Slide 03
+## This is Heading 02 in slide 03
+This is my content on slide 03</textarea>
+            </div>
+
+            <div class="box">
+                <h3>Slide Preview</h3>
+                <div id="slide" class="slide"></div>
+                <div class="controls">
+                    <button id="prevBtn" onclick="previousSlide()">Left</button>
+                    <button id="nextBtn" onclick="nextSlide()">Right</button>
+                    <button onclick="toggleFullscreen()">Full Screen</button>
+                </div>
+                <p id="slideCount">1 / 1</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="presentationPage">
+        <div id="presentationSlide" class="slide"></div>
+        <div class="controls">
+            <button id="presentPrevBtn" onclick="previousSlide()">Left</button>
+            <button id="presentNextBtn" onclick="nextSlide()">Right</button>
+            <button id="presentFullBtn" onclick="toggleFullscreen()">Exit Full Screen</button>
+        </div>
+        <p id="presentCount">1 / 1</p>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
